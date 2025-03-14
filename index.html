@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>美食测评文案</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; padding: 20px; }
+        #output { margin-top: 20px; padding: 10px; border: 1px solid #ddd; background: #f9f9f9; }
+        button { margin-top: 10px; padding: 10px 15px; background: #007bff; color: white; border: none; cursor: pointer; }
+    </style>
+</head>
+<body>
+
+    <h2>你的专属美食测评文案</h2>
+    <div id="output">正在生成文案...</div>
+    <button onclick="copyText()">一键复制</button>
+
+    <script>
+        async function fetchText() {
+            try {
+                const response = await fetch("http://localhost:3000/generate");
+                const data = await response.json();
+                document.getElementById("output").innerText = data.text;
+            } catch (error) {
+                document.getElementById("output").innerText = "生成失败，请稍后再试。";
+            }
+        }
+
+        function copyText() {
+            const text = document.getElementById("output").innerText;
+            navigator.clipboard.writeText(text).then(() => {
+                alert("文案已复制！");
+            });
+        }
+
+        fetchText(); // 页面加载时自动获取文案
+    </script>
+
+</body>
+</html>
