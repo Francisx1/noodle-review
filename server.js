@@ -18,8 +18,8 @@ app.get("/generate", async (req, res) => {
             {
                 model: "deepseek-chat",
                 messages: [
-                    { role: "system", content: "你是一名美食测评达人，擅长用生动的语言描述美食口感。" },
-                    { role: "user", content: "请写一篇关于某家面馆的美食测评，突出面条的口感和汤底的鲜美。" }
+                    { role: "system", content: "你是一名小红书美食探店达人，擅长用生动的语言描述美食口感。" },
+                    { role: "user", content: "请写一篇关于某家面馆的美食测评，带emoji表情，店名：半分饱川派食堂，地址：合肥市蜀山区欢乐广场，不需要带营业时间，突出面条的口感和汤底的鲜美。" }
                 ],
                 temperature: 0.7
             },
