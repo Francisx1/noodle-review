@@ -19,7 +19,7 @@ app.get("/generate", async (req, res) => {
                 model: "deepseek-chat",
                 messages: [
                     { role: "system", content: "你是一名美食测评达人，擅长用生动的语言描述美食口感。" },
-                    { role: "user", content: "请写一篇关于某家面馆的美食测评，突出面条的口感和汤底的鲜美。" }
+                    { role: "user", content: "请写一篇关于某家面馆的美食测评，店名：半分饱川派食堂，突出面条的口感和汤底的鲜美。" }
                 ],
                 temperature: 0.7
             },
